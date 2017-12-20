@@ -1,0 +1,60 @@
+.income {
+    width: 100%;
+    text-align: center;
+    font-size: 40px;
+}
+
+.fa {
+    color: white!important;
+}
+
+.card-button {
+    color: white;
+    text-decoration: none;
+}
+
+input,
+select {
+    color: white;
+    background: transparent;
+    border: none;
+    border-bottom: solid white 1px;
+    margin-top: 5px;
+    width: 100%;
+}
+
+::-webkit-input-placeholder {
+    /* WebKit, Blink, Edge */
+    color: white;
+}
+
+:-moz-placeholder {
+    /* Mozilla Firefox 4 to 18 */
+    color: white;
+    opacity: 1;
+}
+
+::-moz-placeholder {
+    /* Mozilla Firefox 19+ */
+    color: white;
+    opacity: 1;
+}
+
+:-ms-input-placeholder {
+    /* Internet Explorer 10-11 */
+    color: white;
+}
+
+::-ms-input-placeholder {
+    /* Microsoft Edge */
+    color: white;
+}
+
+::placeholder {
+    /* Most modern browsers support this now. */
+    color: white;
+}
+
+option {
+    color: #007bff;
+}

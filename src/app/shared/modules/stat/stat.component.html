@@ -1,0 +1,30 @@
+<div class="card text-white bg-{{bgClass}}">
+    <div class="card-header">
+        <div class="row">
+            <div class="col col-xs-2">
+                <h1>{{data.CryptoCurrency}}</h1>
+                <div class="d-block huge">zamiana z {{data.CountryCurrency}}</div>
+                <div class="d-block huge">Ilość: {{data.HowManyBought}}</div>
+            </div>
+            <div class="col col-xs-8 text-right">
+                <div class="d-block">Bazowe ratio: <br/> {{data.OriginalExchangeRate}}</div>
+                <div class="d-block" *ngIf="ratio && ratio.last">Ostatnie ratio: <br/> {{ratio.last}}</div>
+            </div>
+        </div>
+    </div>
+    <div class="card-block">
+        <div class="row">
+            <div class='income'>
+                {{(data.HowManyBought * (ratio.last - data.OriginalExchangeRate))  | number : '1.2-2' }}
+            </div>
+        </div>
+    </div>
+    <div class="card-footer"> 
+        <a [href]="'https://app.bitbay.net/market/'+data.CryptoCurrency+'-'+data.CountryCurrency" class="btn btn-primary float-left card-inverse card-button">
+            <span><i class="fa fa-arrow-right"></i> Sprawdź</span>
+        </a>
+        <a (click)="removeInvestment(data.Id)" class="btn btn-primary float-right card-inverse card-button">
+            <span><i class="fa fa-remove"></i> Usuń </span>
+        </a>
+    </div>
+</div>

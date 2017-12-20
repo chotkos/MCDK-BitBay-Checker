@@ -1,0 +1,36 @@
+<div class="card text-white bg-warning" *ngIf="inv">
+    <div class="card-header">
+        <div class="row">
+            <div class="col col-xs-12">
+                <h1>
+                    <select [(ngModel)]="inv.CryptoCurrency" required>
+                    <option *ngFor="let c of Crypto" [value]="c">
+                        {{c}}
+                    </option>
+                </select>
+                </h1>
+                <div class="d-block huge">
+                    <select [(ngModel)]="inv.CountryCurrency" required>
+                        <option *ngFor="let c of Country" [value]="c">
+                            {{c}}
+                        </option>
+                    </select>
+                </div>
+                <div class="d-block">
+                    <input [(ngModel)]="inv.HowManyBought" type='number' placeholder="Ilość" required/>
+                </div>
+                <div class="d-block">
+                    <input [(ngModel)]="inv.OriginalExchangeRate" type='number' required placeholder="Kurs wymiany (ratio)" />
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="card-footer">
+        <a (click)="addNewInvestment()" class="btn btn-primary float-left card-inverse card-button">
+            <span><i class="fa fa-plus"></i> Dodaj</span>
+        </a>
+        <a (click)="clearValues()" class="btn btn-primary float-right card-inverse card-button">
+            <span><i class="fa fa-remove"></i> Wyczyść </span>
+        </a>
+    </div>
+</div>
