@@ -9,6 +9,9 @@ import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { AuthGuard } from './shared';
+import { ELECTRON_SCHEMA } from 'electron-schema';
+import { WebviewDirective } from './shared/webview/webview';
+
 
 // AoT requires an exported function for factories
 export function createTranslateLoader(http: HttpClient) {
@@ -34,6 +37,7 @@ export function createTranslateLoader(http: HttpClient) {
     ],
     declarations: [AppComponent],
     providers: [AuthGuard],
-    bootstrap: [AppComponent]
+    bootstrap: [AppComponent],
+    schemas: [ELECTRON_SCHEMA]
 })
 export class AppModule {}

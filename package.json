@@ -2,6 +2,7 @@
   "name": "SB-Admin-BS4-Angular-5",
   "version": "4.0.0",
   "license": "MIT",
+  "main": "main.js",
   "scripts": {
     "ng": "ng",
     "start": "ng serve --ec true",
@@ -9,7 +10,9 @@
     "gitbuild": "ng build --prod --base /start-angular/SB-Admin-BS4-Angular-5/master/dist/",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "electron": "electron .",
+    "electron-build": "ng build --prod && electron ."
   },
   "private": true,
   "dependencies": {
@@ -27,6 +30,8 @@
     "@ngx-translate/http-loader": "^2.0.0",
     "chart.js": "^2.7.1",
     "core-js": "^2.5.1",
+    "electron-log": "^2.2.13",
+    "electron-schema": "0.0.2",
     "font-awesome": "^4.7.0",
     "jquery": "^3.2.1",
     "ng2-charts": "^1.6.0",
@@ -42,6 +47,7 @@
     "@types/jasminewd2": "~2.0.3",
     "@types/node": "~8.0.51",
     "codelyzer": "~4.0.1",
+    "electron": "^1.7.10",
     "jasmine-core": "~2.8.0",
     "jasmine-spec-reporter": "~4.2.1",
     "karma": "~1.7.0",

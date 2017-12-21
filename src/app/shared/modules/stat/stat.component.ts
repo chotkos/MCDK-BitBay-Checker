@@ -1,10 +1,11 @@
 import { MessageService } from '../../../services/messageService';
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { ELECTRON_SCHEMA } from 'electron-schema';
 
 @Component({
     selector: 'app-stat',
     templateUrl: './stat.component.html',
-    styleUrls: ['./stat.component.scss'] 
+    styleUrls: ['./stat.component.scss']
 })
 export class StatComponent implements OnInit {
     @Input() bgClass: string;
