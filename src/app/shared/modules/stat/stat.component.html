@@ -1,4 +1,4 @@
-<div class="card text-white bg-{{bgClass}}">
+<div class="card text-white bg-{{bgClass}}" *ngIf="data">
     <div class="card-header">
         <div class="row">
             <div class="col col-xs-2">
@@ -6,7 +6,7 @@
                 <div class="d-block huge">zamiana z {{data.CountryCurrency}}</div>
                 <div class="d-block huge">Ilość: {{data.HowManyBought}}</div>
             </div>
-            <div class="col col-xs-8 text-right">
+            <div class="col col-xs-8 text-right" *ngIf="ratio">
                 <div class="d-block">Bazowe ratio: <br/> {{data.OriginalExchangeRate}}</div>
                 <div class="d-block" *ngIf="ratio && ratio.last">Ostatnie ratio: <br/> {{ratio.last}}</div>
             </div>
@@ -14,7 +14,7 @@
     </div>
     <div class="card-block">
         <div class="row">
-            <div class='income'>
+            <div class='income' *ngIf="ratio">
                 {{(data.HowManyBought * (ratio.last - data.OriginalExchangeRate))  | number : '1.2-2' }}
             </div>
         </div>
