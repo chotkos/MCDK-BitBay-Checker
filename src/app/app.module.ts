@@ -8,8 +8,7 @@ import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { AuthGuard } from './shared';
-import { ELECTRON_SCHEMA } from 'electron-schema';
+import { AuthGuard } from './shared'; 
 import { WebviewDirective } from './shared/webview/webview';
 
 
@@ -37,7 +36,6 @@ export function createTranslateLoader(http: HttpClient) {
     ],
     declarations: [AppComponent],
     providers: [AuthGuard],
-    bootstrap: [AppComponent],
-    schemas: [ELECTRON_SCHEMA]
+    bootstrap: [AppComponent]
 })
 export class AppModule {}
