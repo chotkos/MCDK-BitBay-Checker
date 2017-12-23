@@ -6,6 +6,7 @@ import { routerTransition } from '../../router.animations';
 import { AppState, StateService } from "../../services/stateService/stateService";
 import { Subscription } from "rxjs/Rx";
 import { HttpClient } from "@angular/common/http";
+import { forEach } from '@angular/router/src/utils/collection';
 @Component({
     selector: 'app-dashboard',
     templateUrl: './dashboard.component.html',
@@ -23,7 +24,7 @@ export class DashboardComponent implements OnInit {
     constructor(private stateService: StateService,
         private messageService: MessageService,
         private bitbayService: BitbayService) {
-        this.ratios=[];
+        this.ratios = [];
 
         this.subscription = this.messageService
             .getMessage()
@@ -41,7 +42,7 @@ export class DashboardComponent implements OnInit {
     }
 
 
-    getPairs():Array<any>{
+    getPairs(): Array<any> {
         var pairs = [];
 
         this.state.Investments.forEach(element => {
@@ -57,19 +58,20 @@ export class DashboardComponent implements OnInit {
 
     ngOnInit() {
 
-        var timer = 60000 /  Object.keys(this.getPairs()).length;
+        var timer = 60000 / Object.keys(this.getPairs()).length;
 
         this.refreshData();
-        setInterval(()=>this.refreshData(), 60000);
+        setInterval(() => this.refreshData(), 60000);
+
     }
 
     refreshData() {
-        var pairs= this.getPairs();
-        this.bitbayService.getData(pairs); 
+        var pairs = this.getPairs();
+        this.bitbayService.getData(pairs);
         this.ratios = this.bitbayService.ratios;
         console.log(this.ratios);
     }
 
-    handleStatEvent(){}
+    handleStatEvent() { }
 
 }

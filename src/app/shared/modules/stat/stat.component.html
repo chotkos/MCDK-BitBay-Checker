@@ -19,9 +19,11 @@
             </div>
         </div>
     </div>
-    <div class="card-block">
+    <div class="card-block" id="{{data.CryptoCurrency+'-'+data.CountryCurrency}}">
         <!--<iframe id="iframe-chart" style='width:100%;height:auto;' src='https://bitbay.net/pl/kurs-walut/kurs-lisk-pln' name="disable-x-frame-options" sandbox="allow-same-origin allow-scripts allow-popups allow-forms allow-pointer-lock"></iframe>-->
-        <webview preload='../preload.js' id="foo" src="https://bitbay.net/pl/kurs-walut/kurs-lisk-pln" style="display:inline-flex; width:640px; height:480px"></webview>
+        <!--<webview preload='../preload.js' id="foo" src="https://bitbay.net/pl/kurs-walut/kurs-lisk-pln" style="display:inline-flex; width:100%; height:400px"></webview>-->
+        <!--<webview preload='../preload.js'  attr.src="https://bitbay.net/pl/kurs-walut/kurs-{{dict[data.CryptoCurrency]}}-{{data.CountryCurrency.toLowerCase()}}?a={{data.CountryCurrency}}&b={{data.CryptoCurrency}}" style="display:inline-flex; width:100%; height:400px"></webview>-->
+        <webview preload='../preload.js'  attr.src="https://bitbay.net/pl/kurs-walut/kurs-{{dict[data.CryptoCurrency]}}-{{data.CountryCurrency.toLowerCase()}}" style="display:inline-flex; width:100%; height:400px"></webview>
     </div>
     <div class="card-footer"> 
         <a [href]="'https://app.bitbay.net/market/'+data.CryptoCurrency+'-'+data.CountryCurrency" class="btn btn-primary float-left card-inverse card-button">
